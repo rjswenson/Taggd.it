@@ -6,6 +6,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
 gem 'figaro'
+gem 'geocoder'
 
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
