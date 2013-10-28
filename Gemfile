@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
 gem 'minitest-rails'
+gem 'carrierwave'
 
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
