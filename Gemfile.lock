@@ -39,6 +39,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     coderay (1.0.9)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -181,6 +185,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-postgresql-adapter
+  carrierwave
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 1.2)
