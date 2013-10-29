@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-TaggdIt::Application.config.secret_key_base = '7f6c0ce4a05191111a43d20dc871f281f8bddcc74d90a60ff59719e85ad61137b3be942e6e7073d2618a7bd4b472c9a8a4e489db6949d5cd37779961ecfdbb7d'
+TaggdIt::Application.config.secret_key_base = ENV['SECRET_TOKEN']

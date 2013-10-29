@@ -3,7 +3,7 @@ require "test_helper"
 feature "The Home Page" do
   scenario "exists" do
     visit root_path
-    page.text.must_include("Home Page")
+    page.text.must_include("Copyright 2013")
   end
 
   scenario "has a title" do
@@ -15,7 +15,7 @@ feature "The Home Page" do
     skip
   end
 
-  scenario "responds to beta code" do
+  scenario "responds to Reddit beta code" do
     skip
   end
 
