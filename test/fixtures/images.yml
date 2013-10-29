@@ -1,12 +1,7 @@
 # Read about fixtures at
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  location: MyString
-  user_id: 1
-
-two:
-  name: MyString
-  location: MyString
-  user_id: 1
+smile:
+  name: Silly Test Smile
+  location: Seattle, WA, USA
+  user_id: basic
