@@ -5,6 +5,7 @@ feature "An Admin logged in" do
     skip
     sign_in(users(:admin))
     visit new_image_path
+    Image.new :photo => File.new(Rails.root + 'test/fixtures/small_test.gif')
   end
 
   scenario "can delete pictures" do

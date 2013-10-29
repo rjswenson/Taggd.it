@@ -11,17 +11,18 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field :user_id, value: current_user.id %>
-
-
   <div class="field">
     <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.text_field :location, :placeholder => "City, Street, Zipcode, or Lat/Longitute" %>
   </div>
+
   <div class="field">
     <%= f.file_field :name %><br>
+  </div>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Upload Image", class: "btn btn-large" %>
   </div>
 <% end %>
