@@ -1,1 +1,34 @@
-<h1> Home Page </h1>
+
+<!--Showshow-->
+<section class="flexslider-wrapper">
+  <div class="flexslider" data-slidernav="auto" data-transition="slide" data-page-class="slider-full-width">
+    <div class="slides">
+      <!--Slide #1 with caption-->
+      <div class="slide">
+        <div data-bg-img="img/patterns/white_wall_hash.png" data-animate-in="fadeIn" data-animate-delay="de-02" class="slide-bg">
+          <div class="slide-content container">
+            <div class="row">
+              <div class="col-md-7"><%= link_to image_tag('blue_lady.jpg') %></div>
+              <div class="col-md-5 caption">
+                <h4 data-animate-in="bounceInRight" data-animate-delay="de-04">The Blue Lady</h4>
+                <h5 data-animate-in="bounceInRight" data-animate-delay="de-02">By <a href="http://www.taggd.it">Taggd.it</a></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Slide #2 straight image 1170px wide x 350px high-->
+      <div class="slide">
+        <div data-bg-img="img/patterns/p6.png" data-animate-in="fadeIn" data-animate-delay="de-06" class="slide-bg">
+          <div class="slide-content container">
+            <div class="row pull-center"> <%= link_to image_tag('fence.jpg') %> </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Slide #3 & so on below-->
+    </div>
+  </div>
+</section>
+

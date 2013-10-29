@@ -12,20 +12,20 @@ feature "The Home Page" do
   end
 
   scenario "prompts visitor for beta code" do
-    pending
+    skip
   end
 
   scenario "responds to beta code" do
-    pending
+    skip
   end
 
   scenario "has a sign in link" do
     visit root_path
-    find_link('sign in').visible?
+    find_link('Sign in').visible?
   end
 
   scenario "has a sign out link" do
     visit root_path
-    find_link("sign up").visible?
+    find_link("Sign up").visible?
   end
 end
