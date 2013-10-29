@@ -4,7 +4,7 @@
 </div>
 <div class="upload-button">
   <h3> Or upload your own </h3>
-  <%= link_to 'Upload', new_image_path, class: "btn" %>
+  <%= link_to 'Upload', new_image_path, class: "btn-large btn-custom" %>
 </div>
 
 <div class="all-images">
@@ -14,8 +14,8 @@
       <%= image.location %>
 
       <% if current_user && current_user.admin? %>
-        <%= link_to 'Edit', edit_image_path(image) %>
-        <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_image_path(image), class: "btn-custom" %>
+        <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-custom" %>
       <% end %>
     </div>
   <% end %>
