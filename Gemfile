@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
 gem 'minitest-rails'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'fog'
+gem 'figaro'
+gem 'geocoder'
 
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
