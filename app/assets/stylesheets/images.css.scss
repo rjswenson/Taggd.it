@@ -1,3 +1,15 @@
 // Place all the styles related to the Images controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.images-title {
+  padding-right: 3em;
+  position: block;
+  text-align: center;
+}
+
+.upload-button {
+  padding-left: 10px;
+  position: block;
+  text-align: center;
+}
