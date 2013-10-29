@@ -13,6 +13,3 @@
 
 *.docx   diff=astextplain
 *.DOCX   diff=astextplain
-
-*.png    binary
-*.jpg    binary
