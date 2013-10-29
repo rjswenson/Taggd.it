@@ -4,6 +4,7 @@
 <table>
   <tbody>
     <% @images.each do |image| %>
+      <% if image.user_id == current_user.id %>
       <tr>
         <td><%= image_tag("#{image.name}", :size => "150x150") %></td>
         <td><%= image.latitude %></td>
@@ -13,6 +14,7 @@
         <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+   <% end %>
   </tbody>
 </table>
 <% else %>
