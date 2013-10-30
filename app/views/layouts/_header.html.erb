@@ -1,5 +1,4 @@
 <div class="js-clingify-placeholder" style="height: 61px;">
-
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container top-zone">
       <ul class="nav navbar-nav">
@@ -19,8 +18,34 @@
           <li><%= link_to "Profile", profile_index_path %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "signout", data: {toggle: "modal"} %></li>
         <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path, class: "signup", data: {toggle: "modal"} %></li>
-          <li><%= link_to "Sign in", new_user_session_path, class: "login", data: {toggle: "modal"} %></li>
+          <!-- Button trigger modal -->
+
+          <li><%= link_to "Sign In", "#myModal", "data-toggle" => "modal" %></li>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <%= render "layouts/modals/signin" %>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
+          <li><%= link_to "Create Account", "#myModal1", "data-toggle" => "modal" %></li>
+          <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <%= render "layouts/modals/signup" %>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
         <% end %>
       </ul>
     </div>
