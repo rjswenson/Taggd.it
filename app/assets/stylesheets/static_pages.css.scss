@@ -40,9 +40,16 @@ body {
   width:600px;
 }
 
+.addimage {
+  margin-left:800px;
+  margin-top: 25px;
+  width:100px;
+  background:#fff;
+}
+
 .myuploads ul {
   margin-left:25px;
-  margin-top:50px;
+  margin-top:5px;
   padding-bottom:30px;
   padding-top:30px;
 }
@@ -54,6 +61,10 @@ body {
   margin-top:50px;
   padding-bottom:30px;
   padding:10px;
+}
+
+.show-uploads li {
+  list-style-type:none;
 }
 
 .btn-custom {

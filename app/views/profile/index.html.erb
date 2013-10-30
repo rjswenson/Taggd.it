@@ -1,5 +1,7 @@
+<div class="addimage">
+  <%= link_to 'New Image', new_image_path %>
+</div>
 <div class="myart">
-<% if current_user %>
   <div class="myuploads">
       <ul class="thumbnails">
         <% @images.each do |image| %>
@@ -11,10 +13,9 @@
           <% else %>
           <% end %>
         <% end %>
-<% end %>
       </ul>
     </div>
   </div>
-</div>
 
-<%= link_to 'New Image', new_image_path %>
+
+
