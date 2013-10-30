@@ -1,16 +1,14 @@
-<p>
-  <%= image_tag @image.name_url(:thumb).to_s %>
-</p>
-<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@image.latitude}%2C#{@image.longitude}&zoom=18&size=800x400&maptype=hybrid&sensor=true" %>
-<p>
-  <strong>Location:</strong>
-  <%= @image.location %>
-</p>
+<div class="show">
+  <ul class="show-uploads">
+  <li><%= image_tag @image.name_url(:thumb).to_s %></li>
+  <br />
+  <li><%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@image.latitude}%2C#{@image.longitude}&zoom=18&size=800x400&maptype=hybrid&sensor=true" %></li>
 
-<p>
-  <strong>User:</strong>
-  <%= @image.user_id %>
-</p>
+  <li><strong>Location:</strong></li>
+  <li><%= @image.location %></li>
+  <li><strong>User:</strong></li>
+  <li><%= @image.user_id %></li>
 
 <%= link_to 'Edit', edit_image_path(@image) %> |
 <%= link_to 'Back', images_path %>
+</div>
