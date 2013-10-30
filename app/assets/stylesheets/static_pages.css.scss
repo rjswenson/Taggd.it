@@ -45,6 +45,24 @@ body {
   margin-top: 25px;
   width:100px;
   background:#fff;
+  font-size:15px;
+}
+
+.banner {
+  background:#dedede;
+  width:970px;
+  height:150px;
+  margin-top:-75px;
+  margin-left:160px;
+  margin-bottom:10px;
+  padding-left:40px;
+}
+
+.custom-container {
+  background:#dedede;
+  max-width:970px;
+  margin-left:160px;
+  padding-top:20px;
 }
 
 .myuploads ul {

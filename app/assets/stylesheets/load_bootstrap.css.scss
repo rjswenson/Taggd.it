@@ -5297,10 +5297,10 @@ a.list-group-item.active > .badge,
 }
 
 .thumbnail {
-  display: inline-block;
-  display: block;
+  display: -webkit-inline-box;
+  list-style-type: none;
   height: auto;
-  max-width: 100%;
+  max-width: 14%;
   padding: 4px;
   line-height: 1.428571429;
   background-color: #ffffff;

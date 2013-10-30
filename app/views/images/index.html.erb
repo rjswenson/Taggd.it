@@ -1,4 +1,5 @@
-<div class="images-title pull-left">
+<div class="banner">
+  <div class="images-title pull-left">
   <h1>Newest Uploads</h1>
   <h3> From around the World </h3>
 </div>
@@ -6,17 +7,20 @@
   <h3> Or upload your own </h3>
   <%= link_to 'Upload', new_image_path, class: "btn-large btn-custom" %>
 </div>
+</div>
 
+<div class="custom-container">
 <div class="all-images">
   <% @images.each do |image| %>
-    <div class="image">
-      <%= image_tag("#{image.name}", :size => "150x150") %>
+    <ul class="thumbnail">
+      <li><%= image_tag("#{image.name}", :size => "250x250") %>
       <%= image.location %>
 
       <% if current_user && current_user.admin? %>
         <%= link_to 'Edit', edit_image_path(image), class: "btn-custom" %>
-        <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-custom" %>
+        <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-custom" %></li>
       <% end %>
-    </div>
+    </ul>
   <% end %>
+</div>
 </div>
