@@ -19,7 +19,9 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 gem 'pundit'
-
+gem 'omniauth'
+gem 'omniauth-reddit', :git => 'git://github.com/jackdempsey/omniauth-reddit.git'
+gem 'omniauth-twitter'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
