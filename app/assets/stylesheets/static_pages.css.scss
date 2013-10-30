@@ -13,16 +13,27 @@
 }
 
 body {
-  background-color: black;
+  background: url(hd1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .top-zone {
-  height: 55px;
-  background: black;
-  overflow-x: hidden;
-  display: inline;
-  margin-bottom: 30px;
+  position:absolute;
+  top:20px;
+  left:141px;
+  z-index:80;
+  width:100%;
+  line-height:12px;
+  height:56px;
+  background:#000;
+  opacity:0.8;
+  filter:alpha(opacity=40);
+  padding:7px 0 0 7px;
 }
+
 
 .btn-custom {
   background-color: hsl(26, 78%, 11%) !important;
