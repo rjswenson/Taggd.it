@@ -21,16 +21,32 @@
 
 .signup-box {
 
- position:relative;
- margin-top: 10em;
- top:10%;
- left:50%;
- z-index:1;
- width:360px;
- margin-left: -180px;
- background-color:#ffffff;
- border:1px solid #999;
-border-radius: 5px;
+  position:relative;
+  margin-top: 10em;
+  top:10%;
+  left:50%;
+  z-index:1;
+  width:360px;
+  margin-left: -180px;
+  background-color:#ffffff;
+  border:1px solid #999;
+  border-radius: 5px;
+
+  div {
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 5px;
+  }
+
+  form {
+    width: 50%;
+    margin: 0 auto;
+
+    .btn-custom {
+      margin-bottom: 1px;
+      margin-left: 25%;
+    }
+  }
 }
 
 .navbar-inverse .nav li.dropdown.open>.dropdown-toggle, .navbar-inverse .nav li.dropdown.active>.dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active>.dropdown-toggle {
