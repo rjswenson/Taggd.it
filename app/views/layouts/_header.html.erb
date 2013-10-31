@@ -15,7 +15,7 @@
         </li>
 
         <% if user_signed_in? %>
-          <li><%= link_to "Profile", profile_index_path %></li>
+          <li><%= link_to "Profile", profile_path(current_user) %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "signout", data: {toggle: "modal"} %></li>
         <% else %>
           <!-- Button trigger modal -->
