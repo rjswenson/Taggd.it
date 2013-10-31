@@ -5300,11 +5300,13 @@ a.list-group-item.active > .badge,
   display: -webkit-inline-box;
   list-style-type: none;
   height: auto;
-  max-width: 14%;
-  padding: 4px;
+  max-width: 30%;
+  padding-left: 17px;
+  padding-top: 17px;
+  font-size: 10px;
   line-height: 1.428571429;
-  background-color: #ffffff;
-  border: 1px solid #ecf0f1;
+  background-color: #ddd;
+  border: 2px solid #ecf0f1;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;

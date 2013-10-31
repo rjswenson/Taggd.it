@@ -34,7 +34,6 @@ transition:opacity .3s linear, top .3s ease-out;top:-25%;
 
 #footer {
  padding-left: 3em;
- position: fixed;
  bottom: 0;
 }
 
@@ -103,6 +102,8 @@ body {
   margin-left:160px;
   margin-bottom:10px;
   padding-left:40px;
+  border:3px solid #eee;
+  border-radius:5px;
 }
 
 .custom-container {
@@ -110,6 +111,8 @@ body {
   max-width:970px;
   margin-left:160px;
   padding-top:20px;
+  border:3px solid #eee;
+  border-radius:5px;
 }
 
 .myuploads ul {
