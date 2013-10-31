@@ -7,5 +7,5 @@ TaggdIt::Application.routes.draw do
   resources :static_pages
   resources :profile
 
-  root 'static_pages#index'
+  root 'images#index'
 end
