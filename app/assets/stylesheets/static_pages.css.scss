@@ -67,8 +67,7 @@ opacity:0.8;
 }
 .top-zone {
   position:absolute;
-  top:20px;
-  left:141px;
+  left: 0;
   z-index:80;
   width:100%;
   line-height:12px;
@@ -81,7 +80,8 @@ opacity:0.8;
 
 .myart {
   background:#fff;
-  margin-left:415px;
+  margin-left: auto;
+  margin-right: auto;
   width:600px;
 }
 
@@ -112,8 +112,7 @@ opacity:0.8;
   background:#dedede;
   width:970px;
   height:150px;
-  margin-left:160px;
-  margin-bottom:10px;
+  margin: 0 auto 20px auto;
   padding-left:40px;
   border:3px solid #eee;
   border-radius:5px;
@@ -122,7 +121,7 @@ opacity:0.8;
 .custom-container {
   background:#dedede;
   max-width:970px;
-  margin-left:160px;
+  margin: 0 auto 0 auto;
   padding-top:20px;
   border:3px solid #eee;
   border-radius:5px;
@@ -175,5 +174,6 @@ h5 a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 
