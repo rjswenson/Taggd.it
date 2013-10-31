@@ -2,9 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.modal{position:fixed;top:10%;left:50%;z-index:1050;width:560px;margin-left: -291px;background-color:#ffffff;border:1px solid #999;border:1px solid rgba(0, 0, 0, 0.3);*border:1px solid #999;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);-moz-box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);-webkit-background-clip:padding-box;
-  -moz-background-clip:padding-box;background-clip:padding-box;outline:none;}.modal.fade{-webkit-transition:opacity .3s linear, top .3s ease-out;-moz-transition:opacity .3s linear, top .3s ease-out;-o-transition:opacity .3s linear, top .3s ease-out;transition:opacity .3s linear, top .3s ease-out;top:-25%;}
+.modal {
+position:fixed;
+top:10%;
+left:50%;
+z-index:1050;
+width:400px;
+margin-left: -291px;
+background-color:#000;
+border:1px solid #999;
+border:1px solid rgba(0, 0, 0, 0.3);
+*border:1px solid #999;
+-webkit-border-radius:6px;
+-moz-border-radius:6px;
+border-radius:6px;
+-webkit-box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);
+-moz-box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);
+box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);
+-webkit-background-clip:padding-box;
+-moz-background-clip:padding-box;
+background-clip:padding-box;
+outline:none;
+}
 
+.modal.fade {
+-webkit-transition:opacity .3s linear, top .3s ease-out;
+-moz-transition:opacity .3s linear, top .3s ease-out;
+-o-transition:opacity .3s linear, top .3s ease-out;
+transition:opacity .3s linear, top .3s ease-out;top:-25%;
+}
 
 #footer {
  padding-left: 3em;
@@ -25,7 +51,7 @@ body {
 }
 
 .modal-content {
-  padding:10px;
+  padding:15px;
 }
 .top-zone {
   position:absolute;
