@@ -18,3 +18,44 @@
 .all-images {
   margin-left: 0px;
 }
+
+.signup-box {
+
+ position:relative;
+ margin-top: 10em;
+ top:10%;
+ left:50%;
+ z-index:1;
+ width:360px;
+ margin-left: -180px;
+ background-color:#ffffff;
+ border:1px solid #999;
+border-radius: 5px;
+}
+
+.navbar-inverse .nav li.dropdown.open>.dropdown-toggle, .navbar-inverse .nav li.dropdown.active>.dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active>.dropdown-toggle {
+  z-index: 2000;
+}
+@media (max-width: 767px) {
+  .dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #7b8a8b;
+  white-space: nowrap;
+  z-index: 1; }
+  }
+
+  @media (max-width: 767px) {
+  .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: black;
+    border: 0;
+    border-radius: 5px;
+     }
+}
