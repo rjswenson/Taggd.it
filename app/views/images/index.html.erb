@@ -14,12 +14,12 @@
 <div class="all-images">
   <% @images.each do |image| %>
     <ul class="thumbnail">
-      <li><%= image_tag("#{image.name}", :size => "250x250") %>
+      <li><%= link_to image_tag("#{image.name}", :size => "250x250"), image_path(image) %>
       <%= image.location %>
 
       <% if current_user && current_user.admin? %>
-        <%= link_to 'Edit', edit_image_path(image), class: "btn-custom" %>
-        <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-custom" %></li>
+        <%= link_to 'Edit', edit_image_path(image), class: "btn-custom btn-small" %>
+        <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-custom btn-small" %></li>
       <% end %>
     </ul>
   <% end %>
