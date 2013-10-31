@@ -49,6 +49,19 @@ body {
   background-size: cover;
 }
 
+.welcome p {
+border:2px solid #a1a1a1;
+padding:10px 40px;
+background:#eee;
+width:800px;
+height:600px;
+border-radius:5px;
+font-size:30px;
+margin-left:300px;
+line-height:80px;
+opacity:0.8;
+}
+
 .modal-content {
   padding:15px;
 }
