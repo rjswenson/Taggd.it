@@ -11,6 +11,7 @@ feature "An Admin logged in" do
   scenario "can delete pictures" do
     sign_in(users(:admin))
     visit images_path
+
     click_on "delete"
     assert_empty @images
     page.text.must_include "successfully"
