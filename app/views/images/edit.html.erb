@@ -1,8 +1,8 @@
-<h1>Editing image</h1>
+<div class="new_image_box">
+  <h1>Edit your Image</h1>
+  <% if @image.user_id == current_user.id %>
+    <%= render 'form' %>
+  <% end %>
+  <%= link_to 'Back to All Pictures', images_path %>
+</div>
 
-<% if current_user %>
-  <%= render 'form' %>
-<% end %>
-
-<%= link_to 'Show', @image %> |
-<%= link_to 'Back', images_path %>
