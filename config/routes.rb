@@ -4,8 +4,8 @@ TaggdIt::Application.routes.draw do
               controllers: { omniauth_callbacks: "omniauth_callbacks"}
 
   resources :images
-  resources :static_pages
   resources :profile
-
+  match '/about',     to: 'static_pages#about',   via: 'get'
+  match '/policy',    to: 'static_pages#policy',  via: 'get'
   root 'images#index'
 end
