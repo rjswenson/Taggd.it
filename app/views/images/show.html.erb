@@ -1,14 +1,27 @@
 <div class="show">
   <ul class="show-uploads">
-  <li><%= image_tag @image.name_url(:thumb).to_s %></li>
-  <br />
-  <li><%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@image.latitude}%2C#{@image.longitude}&zoom=18&size=800x400&maptype=hybrid&sensor=true" %></li>
+    <div class="show-pics">
+      <h1> Check out this Image </h1>
+      <h3> <%= @image.name %> </h3>
+      <li><%= image_tag @image.name_url(:thumb).to_s %></li>
+      <br />
+      <li><%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@image.latitude}%2C#{@image.longitude}&zoom=18&size=800x400&maptype=hybrid&sensor=true" %></li>
+    </div>
+    <div class="show-info">
+      <li><h3>Uploaded:</h3></li>
+      <li><%= distance_of_time_in_words(@image.created_at, Time.now) %> Ago</li>
 
-  <li><strong>Location:</strong></li>
-  <li><%= @image.location %></li>
-  <li><strong>User:</strong></li>
-  <li><%= @image.user_id %></li>
+      <li><h3>Location:</h3></li>
+      <li><%= @image.location %></li><br/>
 
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+      <li><h4>Uploaded By:</h4></li>
+      <li><%=link_to "#{@user.email}", profile_path(@user) %></li><br/>
+
+      <% if @image.user_id == current_user.id %>
+        <%= link_to 'Edit your Picture', edit_image_path(@image) %>
+      <% end %>
+
+      <%= link_to 'Back to all Images', images_path %>
+    </div>
+  </ul>
 </div>
