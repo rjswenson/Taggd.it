@@ -21,11 +21,11 @@ feature "The Home Page" do
 
   scenario "has a sign in link" do
     visit root_path
-    find_link('Sign in').visible?
+    page.text.must_include("Sign in")
   end
 
   scenario "has a sign out link" do
     visit root_path
-    find_link("Sign up").visible?
+    page.text.must_include("Sign up")
   end
 end
