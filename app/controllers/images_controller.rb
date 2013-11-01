@@ -11,6 +11,7 @@ class ImagesController < ApplicationController
   # GET /images/1.json
   def show
     @image = Image.find(params[:id])
+    @user = User.find(@image.user_id)
   end
 
   # GET /images/new
@@ -20,6 +21,7 @@ class ImagesController < ApplicationController
 
   # GET /images/1/edit
   def edit
+    @image = Image.find(params[:id])
   end
 
   # POST /images
