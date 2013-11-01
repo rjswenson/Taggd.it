@@ -1,9 +1,7 @@
 <div class="new_image_box">
-  <div class="new_image">
-    <h1>New image</h1>
-      <% if current_user %>
-        <%= render 'form' %>
-      <% end %>
-<%= link_to 'Back', images_path %>
-  </div>
+  <h1>Upload a Picture</h1>
+  <% if current_user %>
+    <%= render 'form' %>
+  <% end %>
+  <%= link_to 'Back to All Pictures', images_path %>
 </div>
