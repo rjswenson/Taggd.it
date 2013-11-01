@@ -8,6 +8,6 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn-custom btn btn-large btn-block" %><br />
+    <%= link_to "<i class='icon-#{provider}'></i> Sign in with #{provider.to_s.titleize}".html_safe, omniauth_authorize_path(resource_name, provider), class: "btn btn-block btn-#{provider}" %><br />
   <% end -%>
 <% end -%>
