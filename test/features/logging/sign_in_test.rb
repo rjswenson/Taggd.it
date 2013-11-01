@@ -1,6 +1,7 @@
 require "test_helper"
 
 feature "Sign in" do
+  @javascript
   scenario "with valid information" do
     visit root_path
     within(".modal-signin-box") do

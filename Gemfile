@@ -34,6 +34,7 @@ group :test, :development do
   gem 'sqlite3'
   gem 'launchy'
   gem 'pry-rails'
+  gem 'simplecov', :require => false
 end
 
 group :production do
