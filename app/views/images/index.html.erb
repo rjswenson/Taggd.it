@@ -1,21 +1,22 @@
 <div class="banner">
   <div class="images-title pull-left">
-  <h2>Newest Uploads</h2>
-  <h3> From around the World </h3>
-</div>
-<div class="upload-button">
-  <h4> Or upload your own </h4>
-  <br />
-  <%= link_to 'Upload', new_image_path, class: "btn-large btn-custom" %>
-</div>
+    <h2>Newest Uploads</h2>
+    <h3> From around the World </h3>
+  </div>
+  <div class="upload-button pull-right">
+    <h4> Or upload your own </h4>
+    <br/>
+    <%= link_to 'Upload', new_image_path, class: "btn-large btn-custom" %>
+  </div>
 </div>
 
 <div class="custom-container">
 <div class="all-images">
   <% @images.each do |image| %>
-    <ul class="thumbnail">
-      <li><%= link_to image_tag("#{image.name}", :size => "250x250"), image_path(image) %>
-      <%= image.location %>
+    <ul class="thumb-frame">
+      <li class="inside-pic"><%= link_to image_tag("#{image.name}", :size => "250x250"), image_path(image) %>
+      <li><%= image.location %></li>
+      <li><%= distance_of_time_in_words(image.created_at, Time.now) %> Ago</li>
 
       <% if current_user && current_user.admin? %>
         <%= link_to 'Edit', edit_image_path(image), class: "btn-custom btn-small" %>
