@@ -22,7 +22,7 @@ feature "a new visitor" do
       fill_in "Password confirmation", with: "pasword"
       click_on "Join us"
     end
-    save_and_open_page
+
     page.text.must_include "error"
     page.text.wont_include "Sign out"
     page.text.must_include "Sign in"
