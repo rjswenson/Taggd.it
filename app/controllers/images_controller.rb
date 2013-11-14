@@ -1,31 +1,25 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :except => [:index]
-  # GET /images
-  # GET /images.json
+
   def index
     @images = Image.all(:order => "created_at DESC")
   end
 
-  # GET /images/1
-  # GET /images/1.json
   def show
     @image = Image.find(params[:id])
     @user = User.find(@image.user_id)
   end
 
-  # GET /images/new
+
   def new
     @image = Image.new
   end
 
-  # GET /images/1/edit
   def edit
     @image = Image.find(params[:id])
   end
 
-  # POST /images
-  # POST /images.json
   def create
     @image = Image.new(image_params)
 
@@ -40,8 +34,6 @@ class ImagesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /images/1
-  # PATCH/PUT /images/1.json
   def update
     respond_to do |format|
       if @image.update(image_params)
@@ -54,8 +46,6 @@ class ImagesController < ApplicationController
     end
   end
 
-  # DELETE /images/1
-  # DELETE /images/1.json
   def destroy
     @image.destroy
     respond_to do |format|

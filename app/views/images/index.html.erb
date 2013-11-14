@@ -19,8 +19,8 @@
       <li><%= distance_of_time_in_words(image.created_at, Time.now) %> Ago</li>
 
       <% if current_user && current_user.admin? %>
-        <%= link_to 'Edit', edit_image_path(image), class: "btn-custom btn-small" %>
-        <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-custom btn-small" %></li>
+        <li><%= link_to 'Edit', edit_image_path(image), class: "btn-custom btn-small" %></li>
+        <li><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-custom btn-small" %></li>
       <% end %>
     </ul>
   <% end %>
