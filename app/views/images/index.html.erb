@@ -6,23 +6,13 @@
   <div class="upload-button pull-right">
     <h4> Or upload your own </h4>
     <br/>
-    <%= link_to 'Upload', new_image_path, class: "btn-large btn-custom" %>
+    <%= link_to 'Upload', new_image_path, class: "btn-large btn-custom uploader", remote: true %>
   </div>
 </div>
 
 <div class="custom-container">
-<div class="all-images">
-  <% @images.each do |image| %>
-    <ul class="thumb-frame">
-      <li class="inside-pic"><%= link_to image_tag("#{image.name}", :size => "250x250"), image_path(image) %>
-      <li><%= image.location %></li>
-      <li><%= distance_of_time_in_words(image.created_at, Time.now) %> Ago</li>
+  <div class="all-images">
 
-      <% if current_user && current_user.admin? %>
-        <li><%= link_to 'Edit', edit_image_path(image), class: "btn-custom btn-small" %></li>
-        <li><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-custom btn-small" %></li>
-      <% end %>
-    </ul>
-  <% end %>
-</div>
+    <%= render @images %>
+  </div>
 </div>
