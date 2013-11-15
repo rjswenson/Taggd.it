@@ -3,7 +3,7 @@
     <ul class="thumbnails">
       <% if current_user == @user %>
         <div class="addimage">
-          <%= link_to 'New Image', new_image_path, class: "btn btn-custom btn-large" %>
+          <%= link_to 'New Image', new_image_path, class: "btn btn-custom btn-large", remote: true %>
         </div>
       <% end %>
       <% @images.each do |image| %>
