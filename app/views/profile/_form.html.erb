@@ -1,0 +1,28 @@
+<%= form_for(@image, remote: true, :html => {:multipart => true}, :authenticity_token => true) do |f| %>
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% @image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location, :placeholder => "City, Street, Zipcode, or Lat/Longitute" %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :name %>
+  </div>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="actions">
+    <%= f.submit "Upload Image", class: "btn-custom btn-large ajax-upload" %>
+  </div>
+<% end %>
