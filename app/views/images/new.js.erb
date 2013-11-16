@@ -1,2 +1,8 @@
 $('.uploader').hide()
 $('.uploader').after('<%= j render("form") %>')
+
+$(document).ajaxError(function (e, xhr, settings) {
+        if (xhr.status == 401) {
+           window.location.replace(this)
+        }
+    });
