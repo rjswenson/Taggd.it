@@ -1,0 +1,7 @@
+<% if current_user %>
+  <% if @image != nil %>
+    <%= render 'form' %>
+  <% end %>
+<% else %>
+    <%= render 'layouts/modals/signup' %>
+<% end %>

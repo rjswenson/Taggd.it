@@ -6,7 +6,7 @@
   <div class="upload-button pull-right">
     <h4> Or upload your own </h4>
     <br/>
-    <%= link_to 'Upload', new_image_path, class: "btn-large btn-custom uploader", remote: true %>
+    <%= link_to 'Upload', "#uploadModal", class: "btn-large btn-custom uploader", 'data-toggle' => 'modal' %>
   </div>
 </div>
 
@@ -16,3 +16,5 @@
     <%= render @images %>
   </div>
 </div>
+
+<li><%= link_to "Sign In", "#signinModal", "data-toggle" => "modal" %></li>
