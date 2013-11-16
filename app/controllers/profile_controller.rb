@@ -5,7 +5,8 @@ before_filter :authenticate_user!
   end
 
   def show
-    @user = User.find(request.original_url.split('/').last)
+    @user   = User.find(request.original_url.split('/').last)
     @images = @user.images
+    @image  = Image.new
   end
 end
