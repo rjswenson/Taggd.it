@@ -25,14 +25,16 @@ class User < ActiveRecord::Base
   end
 
   def self.new_with_session(params, session)
+    puts "===== DEBUG ====="
+    puts "recieved params and session"
+    puts "Params: #{params}"
+    puts "Session: #{session}"
     if session["devise.user_attributes"]
       new(session["devise.user_attributes"], without_protection: true) do |user|
         user.attributes == params
         user.valid?
       end
     else
-      params = nil
-      session = nil
       super
     end
   end
