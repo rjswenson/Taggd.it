@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
     puts "recieved params and session"
     puts "Params: #{params.inspect}"
     puts "Session: #{session.inspect}"
-    puts "Devise attributes are: #{devise.user_attributes.inspect}"
     puts "================="
     if session["devise.user_attributes"]
       new(session["devise.user_attributes"], without_protection: true) do |user|
