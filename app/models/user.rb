@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
     puts "Session: #{session.inspect}"
     puts "================="
     if session["devise.user_attributes"]
-      new(session["devise.user_attributes"], without_protection: true) do |user|
+      new session["devise.user_attributes"] do |user|
         user.attributes == params
         user.valid?
       end
