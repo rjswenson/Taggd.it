@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index]
 
   def index
-    @images = Image.all(:order => "created_at DESC")
+    @images = Image.order("created_at DESC").to_a
     @image  = Image.new
   end
 
