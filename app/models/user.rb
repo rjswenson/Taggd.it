@@ -29,8 +29,10 @@ class User < ActiveRecord::Base
     puts "recieved params and session"
     puts "Params: #{params}"
     puts "Session: #{session}"
+    puts "Devise attributes are: #{devise.user_attributes}"
+    puts "================="
     if session["devise.user_attributes"]
-      new(session["devise.user_attributes"], without_protection: true) do |user|
+      new(session["devise.user_attributes"]) do |user|
         user.attributes == params
         user.valid?
       end
