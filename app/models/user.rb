@@ -25,11 +25,6 @@ class User < ActiveRecord::Base
   end
 
   def self.new_with_session(params, session)
-    puts "===== DEBUG ====="
-    puts "recieved params and session"
-    puts "Params: #{params.inspect}"
-    puts "Session: #{session.inspect}"
-    puts "================="
     if session["devise.user_attributes"]
       new session["devise.user_attributes"] do |user|
         user.attributes == params
