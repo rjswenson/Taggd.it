@@ -31,6 +31,8 @@ class User < ActiveRecord::Base
         user.valid?
       end
     else
+      params = nil
+      session = nil
       super
     end
   end
