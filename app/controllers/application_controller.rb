@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :set_locale
+
   private
 
   def user_not_authorized
@@ -15,5 +17,13 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up)
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def self.default_url_options(options={})
+    options.merge({ locale: I18n.locale })
   end
 end
