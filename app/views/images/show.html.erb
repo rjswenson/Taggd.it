@@ -9,7 +9,8 @@
     </div>
     <div class="show-info">
       <li><h3>Uploaded:</h3></li>
-      <li><%= distance_of_time_in_words(@image.created_at, Time.current) %> Ago</li>
+      <li><%= l distance_of_time_in_words(@image.created_at, Time.current) %> Ago</li>
+      <li>(<%= l @image.created_at %>)</li>
 
       <li><h3>Location:</h3></li>
       <li><%= @image.location %></li><br/>
