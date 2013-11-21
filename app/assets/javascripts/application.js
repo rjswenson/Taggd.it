@@ -15,5 +15,6 @@
 //= require bootstrap
 //= require twitter/bootstrap
 //= require turbolinks
+//= require browser_timezone_rails/application.js
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/
