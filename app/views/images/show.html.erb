@@ -8,12 +8,12 @@
       <li><%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@image.latitude}%2C#{@image.longitude}&zoom=18&size=800x400&maptype=hybrid&sensor=true" %></li>
     </div>
     <div class="show-info">
-      <li><h3>Uploaded:</h3></li>
-      <li><%= l distance_of_time_in_words(@image.created_at, Time.current) %> Ago</li>
-      <li>(<%= l @image.created_at %>)</li>
-
       <li><h3>Location:</h3></li>
-      <li><%= @image.location %></li><br/>
+      <li><h4><%= @image.location %></h4></li>
+
+      <li><h3>Uploaded:</h3></li>
+      <li><%= distance_of_time_in_words(@image.created_at, Time.current) %> Ago</li>
+      <li>(<%= l @image.created_at, :format => :short %>)</li>
 
       <li><h4>Uploaded By:</h4></li>
       <li><%=link_to "#{@user.email}", profile_path(@user) %></li><br/>
