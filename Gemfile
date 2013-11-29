@@ -22,6 +22,7 @@ gem 'pundit'
 gem 'omniauth'
 gem 'omniauth-reddit', :git => 'git://github.com/jackdempsey/omniauth-reddit.git'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook', '~> 1.5.0'
 gem 'browser-timezone-rails'
 gem 'unf'
 
