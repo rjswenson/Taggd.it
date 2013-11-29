@@ -5,6 +5,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash.notice = "#{user.name}, you are signed in!"
       sign_in_and_redirect user
     else
+      flash.notice = "We're sorry, there was an error signing you in."
       session["devise.user_attributes"] = user.attributes
       redirect_to new_user_registration_url
     end
@@ -12,4 +13,5 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   alias_method :reddit, :all
   alias_method :twitter, :all
+  alias_method :facebook, :all
 end
