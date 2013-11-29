@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email if auth.info.email
-      user.save!
+      user.save
     end
   end
 
