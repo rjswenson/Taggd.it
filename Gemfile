@@ -16,16 +16,22 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
-gem 'devise'
-gem 'devise-i18n'
-gem 'pundit'
-
+# Authorization
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook', '~> 1.5.0'
 gem 'omniauth-google-oauth2', '~> 0.2.1'
+gem 'devise'
+gem 'pundit'
+
+# i18n
 gem 'browser-timezone-rails'
 gem 'unf'
+gem 'devise-i18n'
+
+# Reputation System
+gem 'activerecord-reputation-system', '~> 2.0.2'
+# gem 'merit', '~> 1.6.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
