@@ -19,10 +19,11 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'devise-i18n'
 gem 'pundit'
+
 gem 'omniauth'
-gem 'omniauth-reddit', :git => 'git://github.com/jackdempsey/omniauth-reddit.git'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook', '~> 1.5.0'
+gem 'omniauth-google-oauth2', '~> 0.2.1'
 gem 'browser-timezone-rails'
 gem 'unf'
 
