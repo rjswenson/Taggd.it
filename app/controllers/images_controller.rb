@@ -10,19 +10,13 @@ class ImagesController < ApplicationController
   end
 
   def index
-    @images = Image.order("created_at DESC").to_a
+    ordering = params[:order] || 'new'
+    case ordering
+      when 'hot' then @images = sort_by_votes
+      when 'new' then @images = sort_by_newest
+    end
     @image  = Image.new
   end
-
-  # def top
-  #   This sorts by votes
-
-  #   image_ids = ActiveRecord::Base.connection.execute("SELECT target_id FROM rs_reputations WHERE target_type = 'Image' ORDER BY value DESC")
-  #   image_ids = image_ids.map { |item| item = item[0] }
-  #   @images = []
-  #   image_ids.each { |id| @images << Image.find(id) }
-  #   @image = Image.new
-  # end
 
   def show
     @user = User.find(@image.user_id)
@@ -74,14 +68,26 @@ class ImagesController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_image
-      @image = Image.find(params[:id])
-    end
+private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_image
+    @image = Image.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def image_params
-      params.require(:image).permit(:name, :location, :user_id, :image)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def image_params
+    params.require(:image).permit(:name, :location, :user_id, :image)
+  end
+
+  def sort_by_votes
+    image_ids = ActiveRecord::Base.connection.execute("SELECT target_id FROM rs_reputations WHERE target_type = 'Image' ORDER BY value DESC")
+    image_ids = image_ids.map { |item| item = item[0] }
+    @images = []
+    image_ids.each { |id| @images << Image.find(id) }
+    @images.paginate(page: params[:page])
+  end
+
+  def sort_by_newest
+    @images = Image.order("created_at DESC").paginate(page: params[:page])
+  end
 end
