@@ -154,14 +154,6 @@ opacity:0.8;
   width:600px;
 }
 
-.addimage {
-  .btn-custom {
-    width: 120px;
-    margin: -30px 0 5px 77%;
-  }
-}
-
-
 .new_image_box {
   background:#dedede;
   width:600px;
@@ -212,6 +204,20 @@ opacity:0.8;
   background-color: #dedede;
   border: 1px solid black;
   border-radius: 5px;
+  width: 95%;
+  height: 200px;
+  position: block;
+
+  .btn-custom {
+    margin: -30px 0 0 75%;
+    position: fixed;
+    width: 18%;
+    text-align: center;
+    font-size: 1.3em;
+  }
+}
+.profile-pic {
+
 }
 
 .thumbnails {
