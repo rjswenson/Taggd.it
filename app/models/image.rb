@@ -11,4 +11,5 @@ class Image < ActiveRecord::Base
   def uploaded_by?(user)
     user_id == user.id
   end
+  self.per_page = 15
 end
