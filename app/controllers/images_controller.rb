@@ -10,13 +10,21 @@ class ImagesController < ApplicationController
   end
 
   def index
-    # @images = Image.order("created_at DESC").to_a
-    @images = Image.find_with_reputation(:votes, :all, order: 'votes desc')
+    @images = Image.order("created_at DESC").to_a
     @image  = Image.new
   end
 
+  # def top
+  #   This sorts by votes
+
+  #   image_ids = ActiveRecord::Base.connection.execute("SELECT target_id FROM rs_reputations WHERE target_type = 'Image' ORDER BY value DESC")
+  #   image_ids = image_ids.map { |item| item = item[0] }
+  #   @images = []
+  #   image_ids.each { |id| @images << Image.find(id) }
+  #   @image = Image.new
+  # end
+
   def show
-    @image = Image.find(params[:id])
     @user = User.find(@image.user_id)
   end
 
@@ -26,7 +34,6 @@ class ImagesController < ApplicationController
   end
 
   def edit
-    @image = Image.find(params[:id])
   end
 
   def create
