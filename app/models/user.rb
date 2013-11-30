@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
 
   has_many :images, foreign_key: "user_id"
 
+
+  has_reputation :votes, source: { reputation: :votes, of: :images },
+                aggregated_by: :sum
+
   def admin?
     role == 'admin'
   end

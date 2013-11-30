@@ -6,6 +6,8 @@ class Image < ActiveRecord::Base
   geocoded_by :location
   after_validation :geocode
 
+  has_reputation :votes, source: :user, aggregated_by: :sum
+
   def uploaded_by?(user)
     user_id == user.id
   end
