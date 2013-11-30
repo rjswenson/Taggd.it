@@ -2,8 +2,16 @@ class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :except => [:index]
 
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @image = Image.find(params[:id])
+    @image.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back
+  end
+
   def index
-    @images = Image.order("created_at DESC").to_a
+    # @images = Image.order("created_at DESC").to_a
+    @images = Image.find_with_reputation(:votes, :all, order: 'votes desc')
     @image  = Image.new
   end
 
