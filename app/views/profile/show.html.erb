@@ -1,23 +1,23 @@
-<div class="myart">
-  <div class="myuploads">
-    <ul class="thumbnails">
-      <% if current_user == @user %>
-        <div class="addimage">
-          <%= link_to 'Upload', "#uploadModal", class: "btn-large btn-custom uploader", 'data-toggle' => 'modal' %>
-        </div>
-      <% end %>
-      <% @images.each do |image| %>
-        <div class="profile-pic">
-          <li><%= link_to image_tag("#{image.name}", :size => "150x150"), image_path(image) %></li>
-          <li> <%= image.location %> </li>
-          <li> <%= image.name %> </li>
-
-          <% if current_user == @user %>
-            <li><%= link_to 'Edit', edit_image_path(image) %>
-            <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-          <% end %>
-        </div>
-      <% end %>
-    </ul>
+<div class="myuploads">
+   <div class="profile-pic">
   </div>
+  <h2> <%= @user.name %> </h2>
+  <h3> Points:<%= @user.reputation_for(:votes).to_i %> </h3>
+  <%= link_to 'Upload', "#uploadModal", class: "btn-large btn-custom uploader", 'data-toggle' => 'modal' %>
+</div>
+
+<div class="myart">
+  <ul class="thumbnails">
+    <% @images.each do |image| %>
+      <li><%= link_to image_tag("#{image.name}", :size => "150x150"), image_path(image) %></li>
+      <li> <%= image.location %> </li>
+      <li> <%= pluralize image.reputation_for(:votes).to_i, "vote" %></li>
+      <li> <%= image.name %> </li>
+
+      <% if current_user == @user %>
+        <li><%= link_to 'Edit', edit_image_path(image) %>
+        <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <% end %>
+    <% end %>
+  </ul>
 </div>
