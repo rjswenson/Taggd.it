@@ -8,8 +8,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle = "dropdown">Pictures <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><%= link_to "Recent Uploads", images_path %></li>
-            <li><%= link_to "Top Sprays", "#" %></li>
+            <li><%= link_to "Recent Uploads", images_path(:order => 'new') %></li>
+            <li><%= link_to "Top Sprays", images_path(:order => 'hot') %></li>
             <li><%= link_to "Upload!", new_image_path %></li>
           </ul>
         </li>
@@ -22,7 +22,6 @@
 
           <li><%= link_to "Sign In", "#signinModal", "data-toggle" => "modal" %></li>
           <li><%= link_to "Create Account", "#signupModal", "data-toggle" => "modal" %></li>
-
         <% end %>
       </ul>
     </div>
