@@ -30,7 +30,7 @@ gem 'unf'
 gem 'devise-i18n'
 
 # Reputation System
-gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4'
+gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4', require: 'reputation_system'
 # gem 'merit', '~> 1.6.2'
 
 group :doc do
