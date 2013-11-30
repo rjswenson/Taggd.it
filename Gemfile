@@ -32,6 +32,7 @@ gem 'devise-i18n'
 # Reputation System
 gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4', require: 'reputation_system'
 # gem 'merit', '~> 1.6.2'
+gem 'will_paginate', '~> 3.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
