@@ -1,5 +1,12 @@
 <ul class="thumb-frame">
-  <li class="inside-pic" id="<%= dom_id(image) %>"><%= link_to image_tag("#{image.name}", :size => "250x250"), image_path(image) %>
+  <li class="inside-pic" id="<%= dom_id(image) %>"><%= link_to image_tag("#{image.name}", :size => "250x250"), image_path(image) %></li>
+  <li><%= pluralize image.reputation_for(:votes).to_i, "vote" %></li>
+  <li>
+    <%= link_to "up", vote_image_path(image, type: "up"), method: :post %> ||
+    <%= link_to "down", vote_image_path(image, type: "down"), method: :post %>
+  </li>
+
+
   <li><%= image.location %></li>
   <li><%= distance_of_time_in_words(image.created_at, Time.current) %> Ago</li>
 
