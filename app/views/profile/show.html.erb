@@ -2,7 +2,7 @@
    <div class="profile-pic">
   </div>
   <h2> <%= @user.name %> </h2>
-  <h3> Points:<%= @user.reputation_for(:votes).to_i %> </h3>
+  <h3> Points:<%= @user.reputation_for(:karma).to_i %> </h3>
   <%= link_to 'Upload', "#uploadModal", class: "btn-large btn-custom uploader", 'data-toggle' => 'modal' %>
 </div>
 

@@ -8,9 +8,8 @@ class User < ActiveRecord::Base
   has_many :images, foreign_key: "user_id"
 
 
-  has_reputation :votes, source: { reputation: :votes, of: :images },
-                aggregated_by: :sum
-
+  has_reputation :karma, :source => { :reputation => :votes,
+                                      :of => :images }
   def admin?
     role == 'admin'
   end
