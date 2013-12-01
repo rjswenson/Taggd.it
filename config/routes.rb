@@ -1,9 +1,10 @@
 TaggdIt::Application.routes.draw do
-
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout" },
               controllers: { omniauth_callbacks: "omniauth_callbacks"}
+
   scope "(:locale)", locale: /en/ do
     resources :profile
+    resources :comments
     resources :images do
       member { post :vote }
     end
