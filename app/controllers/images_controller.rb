@@ -20,6 +20,8 @@ class ImagesController < ApplicationController
 
   def show
     @user = User.find(@image.user_id)
+    @comment = Comment.new
+    @comments = @image.comments
   end
 
 
