@@ -8,6 +8,12 @@
       <li><%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@image.latitude}%2C#{@image.longitude}&zoom=18&size=800x400&maptype=hybrid&sensor=true" %></li>
     </div>
     <div class="show-info">
+      <li><h4> Vote? </h4></li>
+      <li>
+        <%= link_to "up", vote_image_path(@image, type: "up"), method: :post %> ||
+        <%= link_to "down", vote_image_path(@image, type: "down"), method: :post %>
+      </li>
+      <li> (<%= @image.reputation_for(:votes).to_i %> Votes) </li>
       <li><h3>Location:</h3></li>
       <li><h4><%= @image.location %></h4></li>
 
@@ -21,6 +27,12 @@
       <% if @image.user_id == current_user.id %>
         <%= link_to 'Edit your Picture', edit_image_path(@image) %>
       <% end %>
+
+      <% if current_user.present? %>
+        <%= render 'comments/form' %>
+      <% end %>
+
+      <%= render 'comments/show_comments' %>
 
       <%= link_to 'Back to all Images', images_path %>
     </div>
