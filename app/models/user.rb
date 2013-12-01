@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
 
   has_many :images, foreign_key: "user_id"
-
+  has_many :comments, foreign_key: "user_id"
 
   has_reputation :karma, :source => { :reputation => :votes,
                                       :of => :images }
