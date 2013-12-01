@@ -28,6 +28,7 @@ gem 'pundit'
 gem 'browser-timezone-rails'
 gem 'unf'
 gem 'devise-i18n'
+gem 'rails-i18n', '~>4.0.0'
 
 # Reputation System
 gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4', require: 'reputation_system'
