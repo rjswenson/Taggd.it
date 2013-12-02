@@ -2,9 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.1'
 gem 'minitest-rails'
+
+# Image Uploading
 gem 'carrierwave'
-gem 'rmagick'
+gem 'mini_magick', '~> 3.7.0'
 gem 'fog'
+
 gem 'figaro'
 gem 'geocoder'
 gem "twitter-bootstrap-rails"
