@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
 private
 
   def ensure_email_set
-    user.email ||= "#{self.name}-CHANGEME@example.com"
+    self.email ||= "#{self.name}-CHANGEME@example.com"
   end
 end
 
