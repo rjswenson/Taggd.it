@@ -16,4 +16,17 @@ class Image < ActiveRecord::Base
     user_id == user.id
   end
   self.per_page = 15
+
+# This is a console-use command to change S3 if image
+# versions are modified within ImageUploader.
+
+  def self.recreate_all_versions!
+    self.all.each do |image|
+      # image.process_your_uploader_upload = true (if using carrierwave_backgrounder)
+      image.name.cache_stored_file!
+      image.name.retrieve_from_cache!(image.name.cache_name)
+      image.name.recreate_versions!
+      image.save!
+    end
+  end
 end

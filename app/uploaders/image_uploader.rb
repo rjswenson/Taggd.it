@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+require 'carrierwave/processing/mini_magick'
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -42,8 +42,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :indexed do
-    process :resize_and_pad => [300, 300, "333333", Magick::CenterGravity], :if => :image_is_jpg?
-    process :resize_and_pad => [300, 300, :transparent , Magick::CenterGravity], :unless => :image_is_jpg?
+    process :resize_and_pad => [300, 300, "#dedede", 'Center'], :if => :image_is_jpg?
+    process :resize_and_pad => [300, 300, :transparent , 'Center'], :if => :image_is_not_jpg?
   end
 
   version :background do
@@ -53,6 +53,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   def image_is_jpg?(img)
     return true if %w{jpg jpeg}.include?(img.file.extension.downcase)
     false
+  end
+
+  def image_is_not_jpg?(img)
+    !image_is_jpg?(img)
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
