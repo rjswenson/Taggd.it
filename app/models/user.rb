@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_reputation :karma, :source => { :reputation => :votes,
                                       :of => :images }
 
-  before_create :set_dummy_mail, if self.provider == "twitter"
+  before_create :ensure_email_set
 
   def admin?
     role == 'admin'
@@ -53,11 +53,10 @@ class User < ActiveRecord::Base
       super
     end
   end
-
 private
 
-  def set_dummy_email
-    self.email = "{self.name}_CHANGEME@example.com"
+  def ensure_email_set
+    user.email ||= "#{self.name}-CHANGEME@example.com"
   end
 end
 
