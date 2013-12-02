@@ -1,5 +1,5 @@
 <ul class="thumb-frame">
-  <li class="inside-pic" id="<%= dom_id(image) %>"><%= link_to image_tag("#{image.name}", :size => "250x250"), image_path(image) %></li>
+  <li class="inside-pic" id="<%= dom_id(image) %>"><%= link_to image_tag(image.name_url(:indexed).to_s), image_path(image) %></li>
   <li><%= pluralize image.reputation_for(:votes).to_i, "vote" %></li>
   <li>
     <%= link_to "up", vote_image_path(image, type: "up"), method: :post %> ||
