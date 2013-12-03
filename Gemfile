@@ -19,6 +19,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
+# Performance
+
+
 # Authorization
 gem 'omniauth'
 gem 'omniauth-twitter'
