@@ -26,6 +26,7 @@ gem 'unicorn'
 gem 'sucker_punch', '~> 1.0.2'
 # TODO: Carrierwave_backgrounder through suckerpunch
 # using Unicorn for background uploading
+gem 'newrelic_rpm'
 
 # Authorization
 gem 'omniauth'
