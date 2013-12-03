@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :omniauthable
 
 
-  has_many :images, foreign_key: "user_id"
-  has_many :comments, foreign_key: "user_id"
+  has_many :images, foreign_key: "user_id", dependent: :destroy
+  has_many :comments, foreign_key: "user_id", dependent: :destroy
+  has_one  :profile, dependent: :destroy
 
   has_reputation :karma, :source => { :reputation => :votes,
                                       :of => :images }

@@ -24,7 +24,7 @@ gem 'memcachier'
 gem 'dalli'
 gem 'unicorn'
 gem 'sucker_punch', '~> 1.0.2'
-# TODO: Carrierwave_backgrounder through suckerpunch
+# TODO: carrierwave_direct through suckerpunch
 # using Unicorn for background uploading
 gem 'newrelic_rpm'
 
