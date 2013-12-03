@@ -19,6 +19,14 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
+# Performance
+gem 'memcachier'
+gem 'dalli'
+gem 'unicorn'
+gem 'sucker_punch', '~> 1.0.2'
+# TODO: Carrierwave_backgrounder through suckerpunch
+# using Unicorn for background uploading
+
 # Authorization
 gem 'omniauth'
 gem 'omniauth-twitter'
