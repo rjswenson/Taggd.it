@@ -2,7 +2,7 @@
   <ul class="show-uploads">
     <div class="show-pics">
       <h1> Check out this Image </h1>
-      <h3> <%= @image.name %> </h3>
+      <h3> <%= @image.short_name %> </h3>
       <li><%= image_tag @image.name_url(:large).to_s %></li>
       <br />
       <li><%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@image.latitude}%2C#{@image.longitude}&zoom=18&size=800x400&maptype=hybrid&sensor=true" %></li>
@@ -22,7 +22,7 @@
       <li>(<%= l @image.created_at, :format => :short %>)</li>
 
       <li><h4>Uploaded By:</h4></li>
-      <li><%=link_to "#{@user.email}", profile_path(@user) %></li><br/>
+      <li><%=link_to "#{@user.username}", profile_path(@user) %></li><br/>
 
       <% if @image.user_id == current_user.id %>
         <%= link_to 'Edit your Picture', edit_image_path(@image) %>

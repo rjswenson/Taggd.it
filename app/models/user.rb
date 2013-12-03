@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :images, foreign_key: "user_id", dependent: :destroy
   has_many :comments, foreign_key: "user_id", dependent: :destroy
-  has_one  :profile, dependent: :destroy
+  has_one  :profile
 
   has_reputation :karma, :source => { :reputation => :votes,
                                       :of => :images }
@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
 private
 
   def ensure_email_set
-    self.email = "#{self.name}-CHANGEME@example.com" if self.email == ""
+    self.email = "#{self.id}-CHANGEME@example.com" if self.email == ""
   end
 end
 

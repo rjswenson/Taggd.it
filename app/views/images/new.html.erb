@@ -1,7 +1,7 @@
 <div class="new_image_box">
   <h1>Upload a Picture</h1>
   <% if current_user %>
-    <%= render 'form' %>
+    <%= render partial: 'form', locals: { :ajaxed => true } %>
   <% end %>
   <%= link_to 'Back to All Pictures', images_path %>
 </div>

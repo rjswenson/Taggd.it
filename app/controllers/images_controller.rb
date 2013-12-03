@@ -53,6 +53,7 @@ class ImagesController < ApplicationController
       if @image.update(image_params)
         format.html { redirect_to @image, notice: 'Image was successfully updated.' }
         format.json { head :no_content }
+        format.js { render :js => "window.location.href =('#{image_path(@image)}');"}
       else
         format.html { render action: 'edit' }
         format.json { render json: @image.errors, status: :unprocessable_entity }
