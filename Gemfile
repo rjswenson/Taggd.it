@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 1.2'
 # Performance
 gem 'memcachier'
 gem 'dalli'
+gem 'unicorn'
 
 # Authorization
 gem 'omniauth'
