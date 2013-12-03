@@ -29,4 +29,8 @@ class Image < ActiveRecord::Base
       image.save!
     end
   end
+
+  def short_name
+    self.name.to_s.split('/')[-1].split('.')[0].camelize
+  end
 end
