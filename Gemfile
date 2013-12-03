@@ -20,7 +20,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # Performance
-
+gem 'memcachier'
+gem 'dalli'
 
 # Authorization
 gem 'omniauth'

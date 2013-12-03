@@ -64,6 +64,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    dalli (2.6.4)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -111,6 +112,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcachier (0.0.2)
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_magick (3.7.0)
@@ -273,6 +275,7 @@ DEPENDENCIES
   capybara-webkit
   carrierwave
   coffee-rails (~> 4.0.0)
+  dalli
   devise
   devise-i18n
   figaro
@@ -281,6 +284,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy
+  memcachier
   mini_magick (~> 3.7.0)
   minitest-colorize
   minitest-focus
