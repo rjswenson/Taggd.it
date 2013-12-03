@@ -1,4 +1,4 @@
-<ul class="thumb-frame">
+  <ul class="thumb-frame">
   <li class="inside-pic" id="<%= dom_id(image) %>"><%= link_to image_tag(image.name_url(:indexed).to_s), image_path(image) %></li>
   <li class="thumb-votes"><%= pluralize image.reputation_for(:votes).to_i, "vote" %></li>
   <li class="thumb-cast-vote">
