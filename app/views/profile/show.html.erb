@@ -1,7 +1,7 @@
 <div class="myuploads">
     <h3> Points: <%= @user.reputation_for(:karma).to_i %> </h3>
-    <%= link_to 'Upload', "#uploadModal", class: "btn-large btn-custom uploader", 'data-toggle' => 'modal' %><br /><br /><br />
-    <%= link_to 'Edit My Account', edit_user_registration_path, class: "btn-large btn-custom" %>
+    <%= link_to 'Upload Image', "#uploadModal", class: "btn-large btn-custom uploader", 'data-toggle' => 'modal' %><br /><br /><br />
+    <%= link_to 'My Settings', edit_user_registration_path, class: "btn-large btn-custom" %>
   <h1>My Uploads</h1>
   <table class="table table-striped">
     <thead>
@@ -21,8 +21,8 @@
         <td> <%= image.short_name %> </td>
 
         <% if current_user == @user %>
-          <td><%= link_to 'Edit', edit_image_path(image) %>
-          <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <td><%= link_to 'Edit', edit_image_path(image), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
           </td>
         </tr>
         <% end %>
