@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :images, foreign_key: "user_id", dependent: :destroy
   has_many :comments, foreign_key: "user_id", dependent: :destroy
-  has_one  :profile, dependent: :destroy
+  has_one  :profile
 
   has_reputation :karma, :source => { :reputation => :votes,
                                       :of => :images }
