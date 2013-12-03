@@ -6,7 +6,6 @@
     <%= link_to "", vote_image_path(image, type: "down"), class: "icon-large icon-thumbs-down", method: :post %>
   </li>
 
-
   <li class="thumb-location"><%= image.location %></li>
   <li class="thumb-uploaded"><%= distance_of_time_in_words(image.created_at, Time.current) %> Ago</li>
 
