@@ -8,14 +8,14 @@
 
   <ul class="thumbnails">
     <% @images.each do |image| %>
-      <li><%= link_to image_tag("#{image.name}", :size => "150x150"), image_path(image) %></li>
+      <li><%= link_to image_tag(image.name_url(:indexed).to_s), image_path(image) %></li>
       <li> <%= image.location %> </li>
       <li> <%= pluralize image.reputation_for(:votes).to_i, "vote" %></li>
-      <li> <%= image.name %> </li>
+      <li> <%= image.short_name %> </li>
 
       <% if current_user == @user %>
-        <li><%= link_to 'Edit', edit_image_path(image) %>
-        <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li><%= button_to 'Edit', edit_image_path(image), method: :get %>
+        <%= button_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       <% end %>
     <% end %>
   </ul>
