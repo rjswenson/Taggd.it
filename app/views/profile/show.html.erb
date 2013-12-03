@@ -1,22 +1,29 @@
 <div class="myuploads">
-   <div class="profile-pic">
-  </div>
-  <h2> <%= @user.name %> </h2>
-  <h3> Points:<%= @user.reputation_for(:karma).to_i %> </h3>
-  <%= link_to 'Upload', "#uploadModal", class: "btn-large btn-custom uploader", 'data-toggle' => 'modal' %><br /><br /><br />
-  <%= link_to 'Edit My Account', edit_user_registration_path, class: "btn-large btn-custom" %>
+  <h1>My Uploads</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Location</th>
+        <th>Votes</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+  <tbody>
+      <% @images.each do |image| %>
+       <tr>
+        <td><%= link_to image_tag("#{image.name}", :size => "150x150"), image_path(image) %></td>
+        <td> <%= image.location %> </td>
+        <td> <%= pluralize image.reputation_for(:votes).to_i, "vote" %></td>
+        <td> <%= image.name %> </td>
 
-  <ul class="thumbnails">
-    <% @images.each do |image| %>
-      <li><%= link_to image_tag("#{image.name}", :size => "150x150"), image_path(image) %></li>
-      <li> <%= image.location %> </li>
-      <li> <%= pluralize image.reputation_for(:votes).to_i, "vote" %></li>
-      <li> <%= image.name %> </li>
-
-      <% if current_user == @user %>
-        <li><%= link_to 'Edit', edit_image_path(image) %>
-        <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <% if current_user == @user %>
+          <td><%= link_to 'Edit', edit_image_path(image) %>
+          <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </tbody>
+  </table>
 </div>
