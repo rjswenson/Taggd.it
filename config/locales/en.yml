@@ -2,5 +2,5 @@ en:
   hello: "Hello world"
   time:
     formats:
-      default: "%a %b %e %Y %m:%M %p %Z"
-      short: "%l/%e/%y @ %m:%M %p"
+      default: "%a %b %e %Y %l:%M %p %Z"
+      short: "%m/%d/%y @ %l:%M %p"
