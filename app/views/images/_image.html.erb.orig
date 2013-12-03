@@ -1,9 +1,20 @@
-  <ul class="thumb-frame">
+<<<<<<< HEAD
+<ul class="thumb-frame">
   <li class="inside-pic" id="<%= dom_id(image) %>">
+    <%= link_to image_tag(image.name_url(:indexed).to_s), image_path(image) %>
+  </li>
+  <li><%= pluralize image.reputation_for(:votes).to_i, "vote" %></li>
+  <li>
+    <%= link_to "up", vote_image_path(image, type: "up"), method: :post %> ||
+    <%= link_to "down", vote_image_path(image, type: "down"), method: :post %>
+=======
+  <ul class="thumb-frame">
+  <li class="inside-pic" id="<%= dom_id(image) %>"><%= link_to image_tag(image.name_url(:indexed).to_s), image_path(image) %></li>
   <li class="thumb-votes"><%= pluralize image.reputation_for(:votes).to_i, "vote" %></li>
   <li class="thumb-cast-vote">
     <i><%= link_to "", vote_image_path(image, type: "up"), class: "icon-large icon-thumbs-up", method: :post %></i> ||
     <%= link_to "", vote_image_path(image, type: "down"), class: "icon-large icon-thumbs-down", method: :post %>
+>>>>>>> d04a97b226f4101a5b244c8751cb527789a2584c
   </li>
 
 
