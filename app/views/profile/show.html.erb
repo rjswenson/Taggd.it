@@ -3,10 +3,9 @@
   </div>
   <h2> <%= @user.name %> </h2>
   <h3> Points:<%= @user.reputation_for(:karma).to_i %> </h3>
-  <%= link_to 'Upload', "#uploadModal", class: "btn-large btn-custom uploader", 'data-toggle' => 'modal' %>
-</div>
+  <%= link_to 'Upload', "#uploadModal", class: "btn-large btn-custom uploader", 'data-toggle' => 'modal' %><br /><br /><br />
+  <%= link_to 'Edit My Account', edit_user_registration_path, class: "btn-large btn-custom" %>
 
-<div class="myart">
   <ul class="thumbnails">
     <% @images.each do |image| %>
       <li><%= link_to image_tag("#{image.name}", :size => "150x150"), image_path(image) %></li>
