@@ -22,7 +22,7 @@
       <li>(<%= l @image.created_at, :format => :short %>)</li>
 
       <li><h4>Uploaded By:</h4></li>
-      <li><%=link_to "#{@user.email}", profile_path(@user) %></li><br/>
+      <li><%=link_to "#{@user.username}", profile_path(@user) %></li><br/>
 
       <% if @image.user_id == current_user.id %>
         <%= link_to 'Edit your Picture', edit_image_path(@image) %>

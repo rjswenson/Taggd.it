@@ -2,7 +2,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def all
     user = User.from_omniauth(request.env["omniauth.auth"])
     if user.persisted?
-      flash.notice = "#{user.email}, you are signed in!"
+      flash.notice = "#{user.username}, you are signed in!"
       sign_in_and_redirect user
     else
       flash.notice = "We're sorry, there was an error signing you in."

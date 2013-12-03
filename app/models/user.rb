@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
 private
 
   def ensure_email_set
-    self.email = "#{self.name}-CHANGEME@example.com" if self.email == ""
+    self.email = "#{self.id}-CHANGEME@example.com" if self.email == ""
   end
 end
 
