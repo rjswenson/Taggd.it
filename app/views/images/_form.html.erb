@@ -16,13 +16,11 @@
     <%= f.text_field :location, :placeholder => "City, Street, Zipcode, or Lat/Longitute" %>
   </div>
 
-  <% if @image.name == nil %>
     <div class="field">
       <%= f.file_field :name %>
     </div>
-  <% else %>
+
     <div><p><%= @image.name %></p></div>
-  <% end %>
 
   <%= f.hidden_field :user_id, value: current_user.id %>
 
