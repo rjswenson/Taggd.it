@@ -1,4 +1,4 @@
-<div class="new_image_box">
+<div class="new_image_box edit_image_box">
   <h1>Edit your Image</h1>
   <% if @image.user_id == current_user.id %>
     <%= render partial: 'form', locals: { :ajaxed => false } %>

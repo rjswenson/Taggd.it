@@ -2,6 +2,11 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 smile:
-  name: Silly Test Smile
+  name: SillyTestSmile
   location: Seattle, WA, USA
   user: basic
+
+frown:
+  name: FrownyFace
+  location: Tacoma
+  user: admin
