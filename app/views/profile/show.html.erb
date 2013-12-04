@@ -16,7 +16,7 @@
   <tbody>
       <% @images.each do |image| %>
        <tr>
-        <td><%= link_to image_tag("#{image.name}", :size => "150x150"), image_path(image) %></td>
+        <td><%= link_to image_tag(image.name_url(:profile).to_s), image_path(image) %></td>
         <td> <%= image.location %> </td>
         <td> <%= pluralize image.reputation_for(:votes).to_i, "vote" %></td>
         <td> <%= image.short_name %> </td>

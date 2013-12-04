@@ -48,6 +48,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [2500, 1600]
   end
 
+  version :profile do
+    process :resize_to_fit => [150, 150]
+  end
+
   def image_is_jpg?(img)
     return true if %w{jpg jpeg}.include?(img.file.extension.downcase)
     false
