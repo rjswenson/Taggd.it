@@ -39,23 +39,11 @@ feature "A Regular User logged in" do
    page.text.must_include "successfully"
   end
 
-  scenario "CANT delete OTHERs pictures" do
-    skip
-    sign_in(users(:basic))
-    visit images_path
-  end
-
   scenario "can edit THEIR pictures" do
     sign_in(users(:basic))
     visit profile_path("en", users(:basic).id)
 
     click_on "Edit"
     page.text.must_include "Edit your Image"
-  end
-
-  scenario "CANT edit OTHERs pictures" do
-    skip
-    sign_in(users(:basic))
-    visit images_path
   end
 end
