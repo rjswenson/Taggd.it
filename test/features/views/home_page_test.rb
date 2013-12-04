@@ -11,14 +11,6 @@ feature "The Home Page" do
     page.title.must_include("Taggd.it")
   end
 
-  scenario "prompts visitor for beta code" do
-    skip
-  end
-
-  scenario "responds to Reddit beta code" do
-    skip
-  end
-
   scenario "has a sign in link" do
     visit root_path
     page.text.must_include("Sign in")
