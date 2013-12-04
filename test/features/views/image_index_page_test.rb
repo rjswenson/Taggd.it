@@ -14,7 +14,7 @@ feature "On the index page, visitors" do
 
   scenario "cannot vote" do
     visit images_path
-    find('.vote-up').click
+    find('.icon-thumbs-up').click
     page.text.must_include("You need to sign in")
   end
 
@@ -34,7 +34,7 @@ feature "On index page, user" do
   scenario "Can vote" do
     sign_in(users(:basic))
     visit images_path
-    find('.vote-down').click
+    find('.icon-thumbs-down').click
     page.text.must_include("-1")
   end
   scenario "Can't Delete" do
@@ -61,7 +61,7 @@ feature "On index page, admin" do
   scenario "Can vote" do
     sign_in(users(:admin))
     visit images_path
-    find('.vote-down').click
+    find('.icon-thumbs-down').click
     page.text.must_include("-1")
   end
 
