@@ -6,7 +6,7 @@ smile:
   location: Seattle, WA, USA
   user: basic
 
-frown:
-  name: FrownyFace
-  location: Tacoma
-  user: admin
+# frown:
+#   name: FrownyFace
+#   location: Tacoma
+#   user: admin

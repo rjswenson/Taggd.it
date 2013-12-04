@@ -31,12 +31,6 @@ feature "An Admin logged in" do
 end
 
 feature "A Regular User logged in" do
-  scenario "can upload pictures" do
-    skip
-    sign_in(users(:basic))
-    visit new_image_path
-  end
-
   scenario "can delete THEIR pictures" do
    sign_in(users(:basic))
    visit profile_path("en", users(:basic).id)
@@ -52,8 +46,11 @@ feature "A Regular User logged in" do
   end
 
   scenario "can edit THEIR pictures" do
-    skip
     sign_in(users(:basic))
+    visit profile_path("en", users(:basic).id)
+
+    click_on "Edit"
+    page.text.must_include "Edit your Image"
   end
 
   scenario "CANT edit OTHERs pictures" do
