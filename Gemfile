@@ -62,6 +62,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'simplecov', :require => false
   gem 'capybara-webkit'
+  gem 'pry'
 end
 
 group :production do
