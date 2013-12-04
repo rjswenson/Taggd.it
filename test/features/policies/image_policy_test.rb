@@ -1,13 +1,6 @@
 require "test_helper"
 
 feature "An Admin logged in" do
-  scenario "can upload pictures" do
-    skip
-    sign_in(users(:admin))
-    visit new_image_path
-    Image.new :photo => File.new(Rails.root + 'test/fixtures/small_test.gif')
-  end
-
   scenario "can delete pictures" do
     sign_in(users(:admin))
     visit images_path
@@ -22,11 +15,6 @@ feature "An Admin logged in" do
     click_on "Edit"
 
     page.text.must_include "Edit your Image"
-
-    # fill_in "Location", with: "New York"
-    # click_on "Upload Image"
-
-    # page.text.must_include "New York"
   end
 end
 
