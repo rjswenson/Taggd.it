@@ -1,7 +1,7 @@
 <div class="comment">
   <ul>
     <li><%= comment.body %></li>
-    <li> By: <%= link_to @user.name, profile_path(@user) %> </li>
+    <li> By: <%= link_to @user.username, profile_path(@user) %> </li>
 
     <% if current_user.id == comment.user_id || current_user.admin? %>
       <li><%= button_to 'Edit', edit_comment_path(comment) %></li>
