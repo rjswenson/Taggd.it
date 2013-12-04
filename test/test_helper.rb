@@ -28,7 +28,7 @@ end
 
 def sign_in(user)
   visit new_user_session_path
-  within(".signup-box") do
+  within(:css, "div#signinModal") do
     fill_in "Email",    with: user.email
     fill_in "Password", with: "password"
     click_button "Sign in"

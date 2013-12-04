@@ -2,8 +2,8 @@ require "test_helper"
 
 feature "a new visitor" do
   scenario "can sign up with valid info" do
-    visit new_user_registration_path
-    within(:css, "div.modal-signup-box") do
+    visit root_path
+    within(:css, "div#signupModal") do
       fill_in "Email", with: "new1@example.com"
       fill_in "Password", with: "password"
       fill_in "Password confirmation", with: "password"
@@ -15,8 +15,8 @@ feature "a new visitor" do
   end
 
   scenario "can't sign up with invalid info" do
-    visit new_user_registration_path
-    within(:css, "div.modal-signup-box") do
+    visit root_path
+    within(:css, "div#signupModal") do
       fill_in "Email", with: "new1@example.com"
       fill_in "Password", with: " "
       fill_in "Password confirmation", with: "pasword"

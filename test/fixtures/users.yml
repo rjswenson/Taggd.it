@@ -6,11 +6,13 @@
 # below each fixture, per the syntax in the comments below
 #
 admin:
+  username: Adminarific
   email: admin@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   role: admin
 
 basic:
+  username: JoeShmoe
   email: basic@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   role: user
