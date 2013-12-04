@@ -86,7 +86,7 @@ private
     image_ids = ActiveRecord::Base.connection.execute("SELECT target_id FROM rs_reputations WHERE target_type = 'Image' ORDER BY value DESC")
     image_ids = image_ids.map { |item| item = item[0] }
     @images = []
-    image_ids.each { |id| @images << Image.find(id) if id.is_a?(Integer) }
+    image_ids.each { |id| @images << Image.find(id) if Image.find(id) }
     @images.paginate(page: params[:page])
   end
 
