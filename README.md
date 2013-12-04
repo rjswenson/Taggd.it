@@ -7,6 +7,7 @@
    |____|  (____  /\___  /\___  /\____ | /\ |__||__|
                 \//_____//_____/      \/ \/
 ```
+[![wercker status](https://app.wercker.com/status/9c8b42f2af2466ec8d04a2eb17847edf/m "wercker status")](https://app.wercker.com/project/bykey/9c8b42f2af2466ec8d04a2eb17847edf)
 
 ========================================================
 
