@@ -38,8 +38,11 @@ feature "A Regular User logged in" do
   end
 
   scenario "can delete THEIR pictures" do
-   skip
    sign_in(users(:basic))
+   visit profile_path("en", users(:basic).id)
+
+   click_on "Destroy"
+   page.text.must_include "successfully"
   end
 
   scenario "CANT delete OTHERs pictures" do
