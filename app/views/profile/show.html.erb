@@ -1,4 +1,5 @@
 <div class="myuploads">
+  <div class="new-container">
     <h3> Points: <%= @user.reputation_for(:karma).to_i %> </h3>
     <%= link_to 'Upload Image', "#uploadModal", class: "btn-large btn-custom uploader", 'data-toggle' => 'modal' %><br /><br /><br />
     <%= link_to 'My Settings', edit_user_registration_path, class: "btn-large btn-custom" %>
@@ -29,4 +30,5 @@
       <% end %>
     </tbody>
   </table>
+ </div>
 </div>
