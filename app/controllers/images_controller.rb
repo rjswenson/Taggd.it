@@ -63,7 +63,7 @@ class ImagesController < ApplicationController
   def destroy
     @image.destroy
     respond_to do |format|
-      format.html { redirect_to images_url, notice: 'Image was successfully destroyed.'}
+      format.html { redirect_to profile_path(current_user), notice: 'Image was successfully destroyed.'}
       format.json { head :no_content }
       format.js
     end
