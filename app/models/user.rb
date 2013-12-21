@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
                                       :of => :images }
 
   before_create :ensure_email_set
+  after_save    :ensure_nickname_set
 
   def admin?
     role == 'admin'
@@ -58,6 +59,10 @@ private
 
   def ensure_email_set
     self.email = "#{self.id}-CHANGEME@example.com" if self.email == ""
+  end
+
+  def ensure_nickname_set
+    self.username ||= "A New Tagger"
   end
 end
 
