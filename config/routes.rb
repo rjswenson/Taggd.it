@@ -9,8 +9,8 @@ TaggdIt::Application.routes.draw do
       member { post :vote }
     end
 
-    match '/about',       to: 'static_pages#about',   via: :get
-    match '/policy',      to: 'static_pages#policy',  via: :get
+    match '/about',       to: 'static_pages#about',     via: :get
+    match '/policy',      to: 'static_pages#policy',    via: :get
   end
   root 'images#index'
 end
